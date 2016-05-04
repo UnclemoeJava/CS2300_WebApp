@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xml:lang="en">
+
+<head>
+  <title>CS2300 Grading System</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+</head>
+
+<body>
+  <div id="main">
+	
+	<div id="menubar">
+	  <div id="welcome">
+	    <h1><font size="8">CS2300 Grading System</font></h1>
+	  </div><!--close welcome-->
+      <div id="menu_items">
+	    <ul id="menu">
+          <!-- <li><a href="index.html">Home</a></li> -->
+          <li><a href="home.php">Home</a></li>
+          <li><a href="hw1.php">hw1</a></li>
+          <li><a href="create_rubric.php">Create Rubric</a></li>
+          <li><a href="edit_rubric.php">Edit Rubric</a></li>
+          <li class="current"><a href="start_grading.php">Start Grading</a></li>
+          <!-- <li><a href="contact.html">Contact Us</a></li> -->
+        </ul>
+      </div><!--close menu-->
+    </div><!--close menubar-->	
+    <br><br><br><br><br><br>
+
+
+
+	<div id="site_content">	
+
+
+	  
+        
+	  <div id="content">
+        <div class="content_item">
+          	<h2><b>Start Grading</b></h2>
+            <p>Search by Student Netid:<input class="contact" size="10" type="text" name="Netid" value="" /></p>
+            <button onclick="">Search</button><br><br><br><br>
+            <p>Student Uploaded File:</p>
+            <button onclick="">Download</button><br><br><br><br>
+
+            <h2><b>Grading Form</b></h2>
+            <table id="grading_table" class="table_rubric">
+              <tr>
+                <td width="60%"><font size="5" color="white"><b>Item</b></font></td>
+                <td width="20%"><font size="5" color="white"><b>Max Score</b></font></td>
+                <td width="20%"><font size="5" color="white"><b>Grading</b></font></td>
+              </tr>
+            </table><br><br>
+
+
+            <button onclick="">Submit</button>
+            <button onclick="">Export</button><br><br><br><br>
+
+
+		   
+		</div><!--close content_item-->
+      </div><!--close content-->   
+
+	</div><!--close site_content--> 
+  </div><!--close main-->
+   
+
+  
+  </body>
+</html>
