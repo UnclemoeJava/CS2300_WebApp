@@ -16,44 +16,7 @@
 </head>
 
 <body>
-	<?php
-		$error=''; // Variable To Store Error Message
-		if (isset($_POST['submit'])) {
-			if (empty($_POST['username']) || empty($_POST['password'])) {
-				$error = "Username or Password is invalid";
-			}
-			else {
-				// Define $username and $password
-				$username = $_POST['username'];
-				$password = $_POST['password'];
-
-				// To protect MySQL injection for Security purpose
-				$username = stripslashes($username);
-				$password = stripslashes($password);
-				$username = mysql_real_escape_string($username);
-				$password = mysql_real_escape_string($password);
-
-				// Password hashing
-				$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-				// $hashed_try = password_hash("iloveu", PASSWORD_DEFAULT);
-				// print($hashed_try);
-
-				$_SESSION['login_user'] = $username;
-				$_SESSION['login_pass'] = $password;
-				$_SESSION['login_hash'] = $hashed_password;
-
-				if(isset($_SESSION['login_user']) && $_SESSION['login_pass']) {
-					header("location: home.php");
-				}
-				else {
-					print ("<h3 style='color: red;'>Please Type in Both Username and Password to Log In</h3>");
-				}
-			}
-		}
-	?>
-
-
+	
 	<div id="main">
 		<h1>Login to the Grading System!</h1>
 		<div id="login">
