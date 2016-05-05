@@ -38,32 +38,7 @@
 
 	  
         
-	  <div id="content">
-        <div class="content_item">
-          	<h2><b>Start Grading</b></h2>
-            <p>Search by Student Netid:<input class="contact" size="10" type="text" name="Netid" value="" /></p>
-            <button onclick="">Search</button><br><br><br><br>
-            <p>Student Uploaded File:</p>
-            <button onclick="">Download</button><br><br><br><br>
-
-            <h2><b>Grading Form</b></h2>
-            <table id="grading_table" class="table_rubric">
-              <tr>
-                <td width="60%"><font size="5" color="white"><b>Item</b></font></td>
-                <td width="20%"><font size="5" color="white"><b>Max Score</b></font></td>
-                <td width="20%"><font size="5" color="white"><b>Grading</b></font></td>
-              </tr>
-            </table><br><br>
-
-
-            <button onclick="">Submit</button>
-            <button onclick="">Export</button><br><br><br><br>
-
-
-		   
-		</div><!--close content_item-->
-      </div><!--close content-->   
-
+	  
 	</div><!--close site_content--> 
   </div><!--close main-->
    

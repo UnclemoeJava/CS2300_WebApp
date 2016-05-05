@@ -38,21 +38,25 @@
 
       <?php
 	    $mysqli = new mysqli("localhost", "awesomesp16", "graderhelper", "info230_SP16_awesomesp16");
-	    $admin = $mysqli->query("SELECT * FROM user WHERE UserID = 1; ");
+	    $admin = $mysqli->query("SELECT * FROM user; ");
 	    //$row = $admin->fetch_assoc();
 	    // $row = mysql_fetch_row($admin);
-	    if(isset($_SESSION['login_user']) && $row = $admin->fetch_assoc()) {
-	        $password_verify = password_verify($_SESSION['login_pass'], $row['HashedPassword']);
-	        if($_SESSION['login_user'] === $row['UserName'] && $password_verify) {
-	          print ("<h2 style = 'color: red;'>You are logged in as Steve</h2>");
+	    if(isset($_SESSION['login_user'])) {
+	        $flag = 0;
+	        while($row = $admin->fetch_assoc()) {
+	        	$password_verify = password_verify($_SESSION['login_pass'], $row['HashedPassword']);
+	        	if($_SESSION['login_user'] === $row['UserName'] && $password_verify) {
+	        		$flag = 1;
+		          	print ("<h2 style = 'color: red;'>You are logged in as Steve or a Head TA</h2>");
+		        }
 	        }
-	        else {
-	          print ("<h2 style = 'color: red;'>Please log as a TA</h2>");
+	        if($flag === 0) {
+	          print ("<h2 style = 'color: red;'>You are logged in as a TA</h2>");
 	        }
 	      }
 	  ?>
 
-
+   
 	  <div class="sidebar_container">       
 		<div class="sidebar">
           <div class="sidebar_item">
@@ -63,12 +67,11 @@
         </div><!--close sidebar-->     		
 		<div class="sidebar">
           <div class="sidebar_item">
-            <h2>Teaching Assistant</h2>
+            <h2>Head Teaching Assistant</h2>
             <p>Xiying Wang  -- xw282@cornell.edu</p>   
-            <p>Nathan Hwang  -- nhh27@cornell.edu</p>
-            <p>Christine Chu  -- cc2228@cornell.edu</p>
-            <p>Andrew Halpern  -- amh272@cornell.edu</p>
-            <p>......</p>      
+            <p>Nitesh Goyal  -- ng323@cornell.edu</p>
+            <p>Leo Kang  -- lk424@cornell.edu</p>
+            <p>Thomas Perz  -- tjp59@cornell.edu</p>
 		  </div><!--close sidebar_item--> 
         </div><!--close sidebar--> 		
       </div><!--close sidebar_container-->		    
@@ -131,7 +134,7 @@
 			    <td>March 10, 2016 23:59PM</td>
 			  </tr>
 			  <tr>
-			  	<td><a href="hw.php?hw_title=<?php echo 'hw2'; ?>">hw3</a>(Click)</td>
+			  	<td><a href="hw.php?hw_title=<?php echo 'hw3'; ?>">hw3</a>(Click)</td>
 			    <td>April 5, 2016 5:00PM</td>		
 			    <td>April 7, 2016 23:59PM</td>
 			  </tr>

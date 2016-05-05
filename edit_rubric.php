@@ -21,10 +21,13 @@
 	    <ul id="menu">
           <!-- <li><a href="index.html">Home</a></li> -->
           <li><a href="home.php">Home</a></li>
-          <li><a href="hw1.php">hw1</a></li>
-          <li><a href="create_rubric.php">Create Rubric</a></li>
-          <li class="current"><a href="edit_rubric.php">Edit Rubric</a></li>
-          <li><a href="start_grading.php">Start Grading</a></li>
+          <?php
+              $hw_title = $_GET['hw_title'];
+              print ("<li><a href='hw.php?hw_title=$hw_title'>$hw_title</a></li>");
+          ?>
+          <li><a href="create_rubric.php?hw_title=<?php echo $hw_title; ?>">Create Rubric</a></li>
+          <li class="current"><a href="edit_rubric.php?hw_title=<?php echo $hw_title; ?>">Edit Rubric</a></li>
+          <!-- <li><a href="start_grading.php">Start Grading</a></li> -->
           <!-- <li><a href="contact.html">Contact Us</a></li> -->
         </ul>
       </div><!--close menu-->
